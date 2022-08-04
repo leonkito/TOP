@@ -1,1 +1,0 @@
-This project is for The Odin project Lessons.
