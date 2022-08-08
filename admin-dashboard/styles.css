@@ -23,11 +23,13 @@ html,body{
   display:grid;
   grid-template-rows:1fr 1fr;
   grid-template-columns: 3fr 2fr;
+  align-items: center;
+  justify-content: center;
   background-color:white;
+  font-weight: 900;
+  font-size: 2vh;
 }
-.headContainer>div{
-  border:1px solid red;
-}
+
 .infoContainer{
   grid-area:2/2/3/3;
   background-color: rgb(245, 245, 245);
@@ -53,4 +55,39 @@ li{
   vertical-align: middle;
   height: 5vh;
   margin-left: 1vh;
+}
+input{
+  width:70vh;
+  height: 3vh;
+  border-radius: 1.5vh;
+  background-color: rgb(235, 235, 235);
+  border: 0cm;
+}
+
+.iconsearch{
+  vertical-align: middle;
+  height:4vh;
+  margin-right:1vh;
+  margin-left: 5vh;
+}
+button{
+  background-color: #476aca;
+  border-radius: 3vh;
+  height:4vh;
+  width:15vh;
+  color: white;
+  font-weight: 700;
+  border: 0vh;
+  font-size: 2vh;
+}
+.test{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3vh;
+}
+.searchbox{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
 }
