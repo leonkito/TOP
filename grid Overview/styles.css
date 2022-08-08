@@ -1,44 +1,28 @@
-.container {
-  display: inline-grid;
-  grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
-  background-color: lightblue; 
+.grid-container {
+  resize: both;
+  overflow: auto;
+  display: grid;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid grey;
+  background-color: skyblue;
+  grid-template-rows: repeat(2,min(200px, 50%));
+  grid-template-columns: repeat(2,2fr) repeat(3,1fr);
 }
 
-.room {
-  border: 1px solid;
-  font-size: 50%;
+.grid-item {
+  background-color: #444;
   text-align: center;
+  color: #ddd;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  padding: 12px;
 }
 
-#living-room {
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 3;
+p {
+  margin: 12px auto 24px;
 }
 
-#kitchen {
-  grid-column: 4 / 6;
-  grid-row: 3 / 6;
-}
-
-#bedroom {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 5;
-}
-
-#bathroom {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 6;
-}
-
-#closet {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 5;
-  grid-row-end: 6;
+img {
+  height: 60px;
 }
