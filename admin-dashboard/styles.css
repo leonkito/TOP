@@ -20,7 +20,13 @@ html,body{
 
 .headContainer{
   grid-area:1/2/2/3;
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   background-color:white;
+}
+.headContainer>div{
+  border:1px solid red;
 }
 .infoContainer{
   grid-area:2/2/3/3;
