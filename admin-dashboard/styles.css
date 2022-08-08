@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+html,body{
+  margin:0;
+  font-family: 'roboto',Arial, Helvetica, sans-serif;
+  }
+.mainContainer{
+  display:grid;
+  height: 100vh;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows:  1fr 5fr;
+}
+.navContainer{
+  color: white;
+  font-size: 2.5vh;
+  background-color: #476aca;
+  grid-area:1/1/3/2;
+  display:grid;
+  grid-template-rows: 1fr 2fr 5fr;
+}
+
+.headContainer{
+  grid-area:1/2/2/3;
+  background-color:white;
+}
+.infoContainer{
+  grid-area:2/2/3/3;
+  background-color: rgb(245, 245, 245);
+}
+ul{
+  list-style: none;
+}
+li{
+  padding-bottom: 1vh;
+}
+.navContainer>p{
+  font-size: 3vh;
+  border: 2px solid black;
+}
+.icon{
+  vertical-align: middle;
+  height:2.5vh;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+  margin-right:1vh;
+  margin-left: -2vh;
+}
+.center{
+  vertical-align: middle;
+  height: 5vh;
+  margin-left: 1vh;
+}
