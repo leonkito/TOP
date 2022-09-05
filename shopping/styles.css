@@ -1,0 +1,27 @@
+.main{
+    display:grid;
+    height:100vh;
+    width:100%;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows:  1fr 5fr;
+}
+.top{
+    background-color: #476aca;
+    grid-area:1/1/2/3;
+    text-align: center;
+    font-size: 4vh;
+}
+.card{
+    display: grid;
+
+}
+p{
+    font-size: 3vh;
+}
+.formulario{
+    grid-area:2/1/2/2;
+    width:100%;
+    font-size: 3vh;
+    display:flex;
+    flex-direction: column;
+}
