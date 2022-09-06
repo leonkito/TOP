@@ -15,7 +15,6 @@ const inputGet = () =>{
 
 function addBook () {
   const newBook = inputGet();
-
   Library.push(newBook);
   updatebooks();
 }
@@ -28,12 +27,15 @@ const createCards = (book) =>{
   const card = document.createElement('div');
   const title = document.createElement('p');
   const author = document.createElement('p');
-  const pages = document.createElement('p')
+  const pages = document.createElement('p');
+  title.classList.add('title');
   title.textContent = `Title: ${book.title}`
+  author.classList.add('author');
   author.textContent = `Author: ${book.author}`
+  pages.classList.add('pages');
   pages.textContent = `N° of pages: ${book.pages}`
-  card.appendChild(title);
   card.appendChild(author);
+  card.appendChild(title);
   card.appendChild(pages);
   stand.appendChild(card).className = 'card';
 }
