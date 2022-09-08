@@ -1,5 +1,5 @@
 let Library = [];
-
+let Stand = [];
 const stand = document.getElementById("stand");
 const submitb = document.getElementById('submitBtn')
 submitb.addEventListener("click", () => {
@@ -23,7 +23,7 @@ const Book = (title,author,pages)=>{
   return {title,author,pages};
 }
 
-const createCards = (book) =>{
+const createCards = (book,indexT) =>{
   const card = document.createElement('div');
   const title = document.createElement('p');
   const author = document.createElement('p');
@@ -34,14 +34,29 @@ const createCards = (book) =>{
   author.textContent = `Author: ${book.author}`
   pages.classList.add('pages');
   pages.textContent = `N° of pages: ${book.pages}`
-  card.appendChild(author);
-  card.appendChild(title);
-  card.appendChild(pages);
+  card.appendChild(author)
+  const btn = document.createElement('button');
+  card.appendChild(title)
+  card.appendChild(pages)
+  btn.onclick = function(){myScript(indexT)};
+  btn.textContent = `Indice ${indexT}`
+  card.appendChild(btn)
+  card.setAttribute('id',indexT)
   stand.appendChild(card).className = 'card';
 }
 const updatebooks = () => {
   for (let book of Library) {
-    createCards(book);
+    if (containsObject(book,Stand) === false) {
+      createCards(book,Library.indexOf(book));
+      Stand.push(book);
+    }
   }
 }
+function myScript(indice){
+  document.getElementById(indice).remove();
+}
+
 //verify how to add book only once to the stand or to redifine stand every time a new book is add
+function containsObject(obj, list) {
+  return list.some(elem => elem === obj)
+}
