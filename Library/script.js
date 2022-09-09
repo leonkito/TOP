@@ -15,6 +15,7 @@ function addBook () {
   const newBook = inputGet();
   Library.push(newBook);
   updatebooks();
+  clear();
 }
 const Book = (title,author,pages,status)=>{
   status = false
@@ -36,40 +37,63 @@ const createCards = (book,indexT) =>{
   pages.classList.add('pages');
   pages.textContent = `N° of pages: ${book.pages}`
   btn.textContent = 'remove'
-  read.textContent = 'not read'
+  read.textContent = book.status
   card.appendChild(author)
   card.appendChild(title)
   card.appendChild(pages)
-  read.onclick = function(){toggleRead('t'+indexT)};
+  read.onclick = function(){toggleRead(indexT)};
   read.setAttribute('id',('t'+indexT));
+  let readColor =  'read'
+  if (book.status === false){
+    readColor = 'not-read'
+  }
   btn.onclick = function(){myScript(indexT)};
   card.appendChild(read)
   card.appendChild(btn)
   card.setAttribute('id',indexT)
-  stand.appendChild(card).className = 'card';
+  card.classList.add('card', readColor);
+  stand.appendChild(card);
 }
 
 function toggleRead(indice){
-  if (document.getElementById(indice).textContent === 'read') {
-    document.getElementById(indice).textContent = 'not read'
+  if (Library[indice].status === false) {
+    Library[indice].status = true
   } else {
-    document.getElementById(indice).textContent = 'read'
+    Library[indice].status = false
   }
+  updatebooks();
 }
 const updatebooks = () => {
+  stand.innerHTML = '';
   for (let book of Library) {
     if (containsObject(book,Stand) === false) {
       createCards(book,Library.indexOf(book));
-      Stand.push(book);
     }
   }
 }
 
 function myScript(indice){
   document.getElementById(indice).remove();
-  //Stand.splice(indice,1);
+  Library.splice(indice,1);
 }
 
 function containsObject(obj, list) {
   return list.some(elem => elem === obj)
 }
+
+function clear(){
+  document.getElementById("myForm").reset();
+}
+//validanting form 
+
+// const titleForm = document.getElementById("bookTitle");
+
+// titleForm.addEventListener("input", (event) => {
+//   if (titleForm.validity.typeMismatch) {
+//     titleForm.setCustomValidity("I am expecting a book title!");
+//     titleForm.reportValidity();
+//   } else {
+//     titleForm.setCustomValidity("");
+//   }
+// });
+
